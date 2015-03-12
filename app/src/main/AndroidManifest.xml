@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.junkcode.remotesilencer" >
+
+    <uses-sdk />
+
+    <!-- setup signature to protect messages -->
+    <permission
+        android:name="net.junkcode.remotesilencer.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="net.junkcode.remotesilencer.permission.C2D_MESSAGE" />
+    <!-- App receives GCM messages. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- GCM connects to Google Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Sherlock" >
+
+        <!-- Main activity with gui -->
+        <activity
+            android:name="net.junkcode.remotesilencer.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- activity with widget configuration -->
+		<activity
+            android:name="net.junkcode.remotesilencer.WidgetConfig"
+            android:label="@string/title_activity_widget_config" >
+            <intent-filter>
+		        <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+		    </intent-filter>
+        </activity>
+        <!-- GCM messages receiver -->
+        <receiver
+            android:name=".BroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="android.media.RINGER_MODE_CHANGED" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!--<action android:name="com.google.android.c2dm.intent.REGISTRATION" />-->
+                <category android:name="net.junkcode.remotesilencer" />
+                <!--<category android:name="com.androidhive.pushnotifications" />-->
+            </intent-filter>
+        </receiver>
+
+        <!-- widget click update receiver -->
+        <receiver
+            android:name="net.junkcode.remotesilencer.SilencerWidget"
+            android:icon="@drawable/ic_launcher"
+            android:label="Silencer!" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="net.junkcode.remotesilencer.MY_WORAROUND" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget" />
+        </receiver>
+
+        <!-- GCM service -->
+        <service android:name=".CustomIntentService" />
+
+        
+    </application>
+
+</manifest>

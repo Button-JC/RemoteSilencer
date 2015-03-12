@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widgetButton"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:gravity="center_horizontal"
+    style="@android:style/Widget"   
+    >
+	<!--
+		android:background="@android:color/transparent" 
+	    android:padding="4dp"
+        
+        -->
+    <Button
+        android:id="@+id/widgetButtonOn"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:drawable/menuitem_background"
+        android:drawableTop="@drawable/ico_sound"
+        android:gravity="center"
+        android:drawablePadding="-13dp"
+        android:text="@string/app_name"
+        style="@style/TextWithShadow" />
+
+    <Button
+        android:id="@+id/widgetButtonOff"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:drawable/menuitem_background"
+        android:drawableTop="@drawable/ico_mute"
+        android:gravity="center"
+		android:drawablePadding="-13dp"
+        android:text="@string/app_name"
+        android:visibility="gone"
+        style="@style/TextWithShadow"  />
+
+
+</LinearLayout>

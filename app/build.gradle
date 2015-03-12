@@ -1,0 +1,46 @@
+import java.text.SimpleDateFormat
+
+apply plugin: 'com.android.application'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def sender_id = properties.getProperty('gcm.sender_id')
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "net.junkcode.remotesilencer"
+        minSdkVersion 9
+        versionCode 4
+        versionName "1.10."+buildTime()
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "SENDER_ID", sender_id
+        }
+        release {
+            buildConfigField "String", "SENDER_ID", sender_id
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(
+                    output.outputFile.parent,
+                    output.outputFile.name.replace("app-release.apk", "RemoteSilencer_${variant.versionName}.apk"))
+        }
+    }
+}
+def buildTime() {
+    def df = new SimpleDateFormat("yyMMddhhmm")
+    return df.format(new Date())
+}
+
+dependencies {
+    compile "com.google.android.gms:play-services:6.5.87"
+    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+}

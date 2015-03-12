@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_add_device"
+        android:orderInCategory="101"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_add_device"/>
+    <item
+        android:id="@+id/action_get_pc"
+        android:orderInCategory="105"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_get_pc"/>
+    <item
+        android:id="@+id/action_show_log"
+        android:orderInCategory="108"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_log"/>
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="200"
+        android:showAsAction="ifRoom"
+        android:title="@string/info_title"/>
+    
+    <!-- android:icon="@android:drawable/ic_menu_preferences" -->
+
+</menu>

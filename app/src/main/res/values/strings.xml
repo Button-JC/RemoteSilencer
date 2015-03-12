@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Remote silencer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="already_registered">Device is already registered on server.</string>
+    <string name="gcm_registered">From GCM: device successfully registered!</string>
+    <string name="gcm_unregistered">From GCM: device successfully unregistered!</string>
+    <string name="gcm_message">From GCM: you got message!</string>
+    <string name="gcm_error">From GCM: error (%1$s).</string>
+    <string name="gcm_recoverable_error">From GCM: recoverable error (%1$s).</string>
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
+    <string name="server_registering">Trying (attempt %1$d/%2$d) to register device on Demo Server.</string>
+    <string name="server_registered">From Demo Server: successfully added device!</string>
+    <string name="server_unregistered">From Demo Server: successfully removed device!</string>
+    <string name="server_register_error">Could not register device on Demo Server after %1$d attempts.</string>
+    <string name="server_unregister_error">Could not unregister device on Demo Server (%1$s).</string>
+    <string name="options_register">Register</string>
+    <string name="options_unregister">Unregister</string>
+    <string name="options_clear">Clear</string>
+    <string name="options_exit">Exit</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_get_pc">Get pairing code</string>
+    <string name="action_add_device">Add device</string>
+    <string name="action_log">Show Log</string>
+    <string name="get_name">Set name</string>
+    <string name="no_devices">No devices added</string>
+    <string name="devices">Control:</string>
+    <string name="devices_acces">Access by:</string>
+    <string name="no_devices_acces">No one has Access</string>
+    <string name="allowed">Allowed</string>
+    <string name="ignored">Ignored</string>
+    <string name="get_id">ID</string>
+    <string name="registred_id">Your registered ID:</string>
+    <string name="no_id">No answer from server, try again later.</string>
+    <string name="silence">Silence!</string>
+    <string name="silenced">Silenced</string>
+    <string name="pairingcode">Pairing code:</string>
+    <string name="nameit">Name device:</string>
+    <string name="action">What to do</string>
+    
+    <string name="select_devices">Select devices witch will be controlled by this widget</string>
+    <string name="self">This device</string>
+    <string name="namewidget">Name</string>
+
+    <string-array name="actionArray">
+        <item>Edit</item>
+        <item>Remove</item>
+    </string-array>
+
+    <string name="title_activity_widget_config">WidgetConfig</string>
+
+    <string name="info_title">About</string>
+    <string name="info_msg">
+        "This app is now open source!\r\n"
+        "  You can find more info at http://junkcode.net/forum/viewtopic.php?f=6&amp;t=3. Feel free to browse the code and/or propose or even implement new features.\r\n"
+        "\r\n"
+        "App is still also in beta and you can contact us with any ideas on: \r\n"
+        " - forum http://junkcode.net/forum/ \r\n"
+        " - or bug tracker at https://github.com/JunkCode/RemoteSilencer/issues  \r\n"
+        "\r\n"
+     </string>
+    <string name="donate_line">
+        "Do you like this app? Say it by donation on http://junkcode.net for future development.\r\n"
+    </string>
+    <string name="update_title">
+        "New update"
+    </string>
+
+    <string name="info_update">
+        "Version: 1.10\r\n"
+        "  - New update of google services (unfortunately new pairing is required).\r\n"
+        "  - Widgets now have feedback on local mute/unmute changes.\r\n"
+        "  - The app is now open source! http://junkcode.net/forum/viewtopic.php?f=6&amp;t=3 \r\n"
+    </string>
+    <string name="version">App version</string>
+</resources>
