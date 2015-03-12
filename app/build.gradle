@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat
 apply plugin: 'com.android.application'
 
 Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+properties.load(project.rootProject.file('auth.constants').newDataInputStream())
 def sender_id = properties.getProperty('gcm.sender_id')
 
 android {
@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId "net.junkcode.remotesilencer"
         minSdkVersion 9
-        versionCode 4
+        versionCode 5
         versionName "1.10."+buildTime()
     }
 

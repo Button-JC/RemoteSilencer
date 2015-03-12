@@ -1,0 +1,2 @@
+# sender id (replace with one from Google API)
+gcm.sender_id="000000000000"

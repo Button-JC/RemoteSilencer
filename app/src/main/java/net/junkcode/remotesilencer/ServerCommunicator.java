@@ -117,7 +117,7 @@ public class ServerCommunicator {
                     // Persist the regID - no need to register again.
                     storeRegistrationId(regId);
                 } catch (IOException ex) {
-                    msg = "Error :" + ex.getMessage();
+                    msg = "Error: " + ex.getMessage()+" Try restarting the app.";
                     Log.e(TAG,msg);
                     // If there is an error, don't just keep trying to register.
                     // Require the user to click a button again, or perform
